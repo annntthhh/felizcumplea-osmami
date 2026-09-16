@@ -14,6 +14,33 @@ body {
     overflow-x: hidden;
 }
 
+/* ===== Botón de música ===== */
+.music-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: #800020;
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 10001;
+    box-shadow: 0 4px 12px rgba(128,0,32,0.4);
+    transition: all 0.3s;
+    animation: musicPulse 1.5s infinite;
+}
+
+.music-btn:hover {
+    transform: scale(1.1);
+}
+
+.music-btn.playing {
+    background: #a00028;
+    animation: musicBeat 1s infinite;
+}
+
 /* ===== Pantalla de inicio con la huella ===== */
 .intro-screen {
     position: fixed;
@@ -351,6 +378,53 @@ body {
     margin: 0 4px;
 }
 
+/* ===== 😂 Contador de regaños ===== */
+.scold-counter {
+    margin-top: 30px;
+    background: rgba(255,255,255,0.85);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(128,0,32,0.15);
+    border: 2px dashed #ff8fa3;
+}
+
+.scold-counter p {
+    color: #800020;
+    font-weight: bold;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.scold-counter #scoldCount {
+    color: #ff6a00;
+    font-size: 1.4rem;
+}
+
+.btn-small {
+    background: #ff8fa3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 3px 8px rgba(255,143,163,0.4);
+}
+
+.btn-small:hover {
+    transform: scale(1.05);
+    background: #ff6a8a;
+}
+
+.scold-msg {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: #a0526a;
+    font-style: italic;
+    min-height: 20px;
+}
+
 /* ===== CONFETI ===== */
 .confetti {
     position: fixed;
@@ -543,6 +617,16 @@ body {
     }
 }
 
+@keyframes musicPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes musicBeat {
+    0%, 100% { transform: scale(1); box-shadow: 0 4px 12px rgba(128,0,32,0.4); }
+    50% { transform: scale(1.15); box-shadow: 0 4px 20px rgba(255,143,163,0.7); }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 400px) {
     .title { font-size: 1.8rem; }
@@ -551,4 +635,5 @@ body {
     .envelope { width: 260px; }
     .letter { padding: 20px 15px; }
     .handprint { width: 130px; height: 130px; }
+    .music-btn { width: 42px; height: 42px; font-size: 1.1rem; }
     }
