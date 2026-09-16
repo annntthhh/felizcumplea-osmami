@@ -1,1 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fff5f7, #ffe4ec, #f8d7e0);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 30px 20px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.title {
+    font-size: 2.2rem;
+    color: #800020; /* borgoña */
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+    margin-bottom: 8px;
+    animation: bounce 2s infinite;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #a0526a;
+    margin-bottom: 30px;
+}
+
+.subtitle strong {
+    color: #800020;
+}
+
+/* ===== PASTEL ===== */
+.cake {
+    position: relative;
+    width: 200px;
+    height: 180px;
+    margin: 0 auto 30px;
+    cursor: pointer;
+}
+
+.cake-layer {
+    width: 200px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.layer-1 {
+    height: 55px;
+    background: #ffc0cb; /* rosado */
+    bottom: 70px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.layer-2 {
+    height: 55px;
+    background: #ff8fa3;
+    bottom: 35px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.layer-3 {
+    height: 35px;
+    background: #800020; /* borgoña */
+    bottom: 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.icing {
+    display: block;
+    height: 12px;
+    background: #fff;
+    border-radius: 50% 50% 0 0;
+    margin: 0 10px;
+    opacity: 0.9;
+}
+
+.plate {
+    width: 230px;
+    height: 15px;
+    background: #e8e8e8;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* ===== VELAS ===== */
+.candle {
+    position: absolute;
+    width: 12px;
+    height: 35px;
+    background: repeating-linear-gradient(
+        45deg,
+        #fff,
+        #fff 4px,
+        #ff8fa3 4px,
+        #ff8fa3 8px
+    );
+    border-radius: 3px;
+    bottom: 125px;
+    z-index: 3;
+}
+
+.candle-1 { left: 50%; transform: translateX(-50%); }
+.candle-2 { left: 35%; transform: translateX(-50%); }
+.candle-3 { left: 65%; transform: translateX(-50%); }
+
+.flame {
+    width: 14px;
+    height: 18px;
+    background: radial-gradient(circle, #ffd700, #ff8c00 60%, transparent);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: flicker 0.5s infinite alternate;
+}
+
+/* Velas apagadas */
+.cake.out .flame {
+    display: none;
+}
+
+/* ===== BOTÓN ===== */
+.btn {
+    background: #800020;
+    color: #fff;
+    border: none;
+    padding: 14px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(128,0,32,0.4);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: #a00028;
+}
+
+/* ===== MENSAJE ===== */
+.message {
+    margin-top: 25px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(128,0,32,0.15);
+    animation: fadeIn 1s;
+}
+
+.message p {
+    font-size: 1.2rem;
+    color: #800020;
+    margin: 8px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ===== CONTADOR ===== */
+.counter {
+    margin-top: 30px;
+    background: rgba(255,255,255,0.7);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.counter p {
+    color: #800020;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.numbers span {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ff8fa3;
+    margin: 0 4px;
+}
+
+/* ===== CONFETI ===== */
+.confetti {
+    position: fixed;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    z-index: 1;
+    opacity: 0.9;
+    animation: fall linear forwards;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes flicker {
+    from { transform: translateX(-50%) scale(1); }
+    to { transform: translateX(-50%) scale(1.2); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fall {
+    to { transform: translateY(110vh) rotate(720deg); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 400px) {
+    .title { font-size: 1.8rem; }
+    .cake { transform: scale(0.9); }
+    .numbers span { font-size: 1.1rem; }
+}
