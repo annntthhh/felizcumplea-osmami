@@ -4,35 +4,46 @@ const blowBtn = document.getElementById('blowBtn');
 const message = document.getElementById('message');
 
 blowBtn.addEventListener('click', () => {
-    cake.classList.add('out'); // apaga las velas
-    blowBtn.style.display = 'none'; // oculta el botón
-    message.classList.remove('hidden'); // muestra el mensaje
-    launchConfetti(); // 🎉 celebración
+    cake.classList.add('out');
+    blowBtn.style.display = 'none';
+    message.classList.remove('hidden');
+    launchConfetti();
 });
 
-// ===== CONFETI =====
+// ===== CONFETI (más cantidad y variedad) =====
 function launchConfetti() {
-    const colors = ['#ff8fa3', '#800020', '#ffc0cb', '#ffd700', '#fff'];
-    for (let i = 0; i < 80; i++) {
+    const colors = ['#ff8fa3', '#800020', '#ffc0cb', '#ffd700', '#fff', '#ff6a00', '#e91e63'];
+
+    for (let i = 0; i < 200; i++) {
         setTimeout(() => {
             const piece = document.createElement('div');
             piece.className = 'confetti';
             piece.style.left = Math.random() * 100 + 'vw';
             piece.style.background = colors[Math.floor(Math.random() * colors.length)];
-            piece.style.animationDuration = (3 + Math.random() * 2) + 's';
-            piece.style.width = (6 + Math.random() * 8) + 'px';
-            piece.style.height = piece.style.width;
-            document.body.appendChild(piece);
+            piece.style.animationDuration = (3 + Math.random() * 3) + 's';
+            piece.style.animationDelay = (Math.random() * 2) + 's';
 
-            // limpiar después
-            setTimeout(() => piece.remove(), 5000);
-        }, i * 40);
+            const size = 6 + Math.random() * 10;
+            piece.style.width = size + 'px';
+            piece.style.height = size + 'px';
+
+            // Formas variadas: círculos y corazones
+            if (Math.random() > 0.7) {
+                piece.style.borderRadius = '50%';
+            } else if (Math.random() > 0.5) {
+                piece.style.borderRadius = '50% 50% 50% 0';
+                piece.style.transform = 'rotate(-45deg)';
+            }
+
+            document.body.appendChild(piece);
+            setTimeout(() => piece.remove(), 8000);
+        }, i * 20);
     }
 }
 
 // ===== CONTADOR DE EDAD =====
-// Fecha del cumpleaños (cámbiala por la fecha real de tu mamá)
-const birthDate = new Date('1978-01-01');
+// ⚠️ CAMBIA ESTA FECHA por la fecha real de nacimiento de tu mamá
+const birthDate = new Date('1978-9-17');
 const now = new Date();
 
 let years = now.getFullYear() - birthDate.getFullYear();
