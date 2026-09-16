@@ -9,7 +9,25 @@
 </head>
 <body>
 
-    <div class="container">
+    <!-- ✨ NUEVO: Pantalla de inicio con la huella -->
+    <div class="intro-screen" id="introScreen">
+        <div class="intro-heart" id="introHeart">
+            <svg class="handprint" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Palma -->
+                <path d="M100 60 C 80 60, 55 85, 55 120 C 55 150, 75 175, 100 175 C 125 175, 145 150, 145 120 C 145 85, 120 60, 100 60 Z" fill="#ffc0cb"/>
+                <!-- Dedos -->
+                <ellipse cx="70" cy="45" rx="12" ry="25" fill="#ffc0cb" transform="rotate(-15 70 45)"/>
+                <ellipse cx="88" cy="32" rx="12" ry="28" fill="#ffc0cb" transform="rotate(-5 88 32)"/>
+                <ellipse cx="112" cy="32" rx="12" ry="28" fill="#ffc0cb" transform="rotate(5 112 32)"/>
+                <ellipse cx="130" cy="45" rx="12" ry="25" fill="#ffc0cb" transform="rotate(15 130 45)"/>
+                <!-- Pulgar -->
+                <ellipse cx="52" cy="80" rx="14" ry="22" fill="#ffc0cb" transform="rotate(-40 52 80)"/>
+            </svg>
+            <p class="intro-text">Toca la huellita 💕</p>
+        </div>
+    </div>
+
+    <div class="container" id="mainContent">
         <h1 class="title">¡Feliz Cumpleaños, Mamá! 🎉</h1>
         <p class="subtitle">Hoy celebras <strong>48 años</strong> de pura luz y amor 💕</p>
 
@@ -61,7 +79,7 @@
             </div>
         </div>
 
-        <!-- ✨ NUEVO: Carta desplegable -->
+        <!-- Carta desplegable -->
         <div class="letter-section">
             <div class="envelope" id="envelope">
                 <div class="envelope-front">
