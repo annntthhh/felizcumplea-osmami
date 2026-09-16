@@ -9,28 +9,33 @@
 </head>
 <body>
 
-    <div class="confetti" id="confetti"></div>
-
     <div class="container">
         <h1 class="title">¡Feliz Cumpleaños, Mamá! 🎉</h1>
         <p class="subtitle">Hoy celebras <strong>48 años</strong> de pura luz y amor 💕</p>
 
         <!-- El pastel -->
         <div class="cake" id="cake">
-            <div class="candle">
+            <!-- Velas: 16 (tú), 18 (hermano), 12 (hermana) -->
+            <div class="candle" style="left: 50%;">
                 <div class="flame"></div>
+                <span class="candle-num">16</span>
             </div>
-            <div class="candle candle-2">
-                <div class="flame"></div>
+            <div class="candle" style="left: 30%;">
+                <div class="flame flame-2"></div>
+                <span class="candle-num">18</span>
             </div>
-            <div class="candle candle-3">
-                <div class="flame"></div>
+            <div class="candle" style="left: 70%;">
+                <div class="flame flame-3"></div>
+                <span class="candle-num">12</span>
             </div>
+
             <div class="cake-layer layer-1">
                 <span class="icing"></span>
+                <span class="sprinkles"></span>
             </div>
             <div class="cake-layer layer-2">
                 <span class="icing"></span>
+                <span class="sprinkles"></span>
             </div>
             <div class="cake-layer layer-3"></div>
             <div class="plate"></div>
@@ -42,19 +47,17 @@
         <!-- Mensaje sorpresa -->
         <div class="message hidden" id="message">
             <p>✨ ¡Que todos tus deseos se cumplan! ✨</p>
-            <p>Te amo infinitamente, Mamá 💖</p>
+            <p>Te amamos infinitamente, Mamá 💖</p>
+            <p class="sign">— Tus tres hijos con amor 💕</p>
         </div>
 
         <!-- Contador -->
         <div class="counter">
             <p>Has sido increíble por:</p>
             <div class="numbers">
-                <span id="years">48</span>
-                <span>años</span>
-                <span id="months">0</span>
-                <span>meses</span>
-                <span id="days">0</span>
-                <span>días</span>
+                <span id="years">48</span><span>años</span>
+                <span id="months">0</span><span>meses</span>
+                <span id="days">0</span><span>días</span>
             </div>
         </div>
     </div>
