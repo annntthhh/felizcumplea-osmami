@@ -1,8 +1,11 @@
-// ===== ✨ NUEVO: Pantalla de inicio con la huella =====
+// ===== Pantalla de inicio con la huella =====
 const introScreen = document.getElementById('introScreen');
 const introHeart = document.getElementById('introHeart');
 
 introHeart.addEventListener('click', () => {
+    // Pedir permiso del micrófono justo al tocar la huellita
+    startMicrophone();
+
     // Crear el corazón que crece y explota
     const heart = document.createElement('div');
     heart.className = 'heart-grow';
@@ -31,7 +34,7 @@ blowBtn.addEventListener('click', () => {
     launchConfetti();
 });
 
-// ===== CONFETI (más cantidad y variedad) =====
+// ===== CONFETI =====
 function launchConfetti() {
     const colors = ['#ff8fa3', '#800020', '#ffc0cb', '#ffd700', '#fff', '#ff6a00', '#e91e63'];
 
@@ -157,11 +160,6 @@ async function startMicrophone() {
         console.log('Micrófono no disponible, usando botón');
     }
 }
-
-// ✨ Pedir permiso del micrófono apenas se abre la página
-window.addEventListener('load', () => {
-    startMicrophone();
-});
 
 // El botón sigue funcionando como respaldo por si rechaza el permiso
 blowBtn.addEventListener('click', () => {
