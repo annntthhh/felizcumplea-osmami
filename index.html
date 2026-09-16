@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Feliz Cumpleaños, Mamá! 💖</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💖</text></svg>">
+    <!-- Evitar caché: siempre carga la versión nueva -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
-    <!-- ✨ NUEVO: Pantalla de inicio con la huella -->
+    <!-- Pantalla de inicio con la huella -->
     <div class="intro-screen" id="introScreen">
         <div class="intro-heart" id="introHeart">
             <svg class="handprint" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Palma -->
                 <path d="M100 60 C 80 60, 55 85, 55 120 C 55 150, 75 175, 100 175 C 125 175, 145 150, 145 120 C 145 85, 120 60, 100 60 Z" fill="#ffc0cb"/>
-                <!-- Dedos -->
                 <ellipse cx="70" cy="45" rx="12" ry="25" fill="#ffc0cb" transform="rotate(-15 70 45)"/>
                 <ellipse cx="88" cy="32" rx="12" ry="28" fill="#ffc0cb" transform="rotate(-5 88 32)"/>
                 <ellipse cx="112" cy="32" rx="12" ry="28" fill="#ffc0cb" transform="rotate(5 112 32)"/>
                 <ellipse cx="130" cy="45" rx="12" ry="25" fill="#ffc0cb" transform="rotate(15 130 45)"/>
-                <!-- Pulgar -->
                 <ellipse cx="52" cy="80" rx="14" ry="22" fill="#ffc0cb" transform="rotate(-40 52 80)"/>
             </svg>
             <p class="intro-text">Toca la huellita 💕</p>
@@ -33,7 +34,6 @@
 
         <!-- El pastel -->
         <div class="cake" id="cake">
-            <!-- Velas: 16 (tú), 18 (hermano), 12 (hermana) -->
             <div class="candle" style="left: 50%;">
                 <div class="flame"></div>
                 <span class="candle-num">16</span>
@@ -104,4 +104,4 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+                </html>
