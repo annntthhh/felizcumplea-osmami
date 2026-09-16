@@ -14,7 +14,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== ✨ NUEVO: Pantalla de inicio ===== */
+/* ===== Pantalla de inicio con la huella ===== */
 .intro-screen {
     position: fixed;
     top: 0;
@@ -74,7 +74,7 @@ body {
     animation: heartExplode 1.2s ease-out forwards;
 }
 
-/* ===== Contenido principal (oculto hasta que explote) ===== */
+/* ===== Contenido principal ===== */
 .container {
     text-align: center;
     padding: 30px 20px;
@@ -84,7 +84,6 @@ body {
     z-index: 2;
 }
 
-/* ===== Título ===== */
 .title {
     font-size: 2.2rem;
     color: #800020;
@@ -552,4 +551,4 @@ body {
     .envelope { width: 260px; }
     .letter { padding: 20px 15px; }
     .handprint { width: 130px; height: 130px; }
-}
+    }
