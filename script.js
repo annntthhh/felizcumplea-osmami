@@ -1,3 +1,24 @@
+// ===== ✨ NUEVO: Pantalla de inicio con la huella =====
+const introScreen = document.getElementById('introScreen');
+const introHeart = document.getElementById('introHeart');
+
+introHeart.addEventListener('click', () => {
+    // Crear el corazón que crece y explota
+    const heart = document.createElement('div');
+    heart.className = 'heart-grow';
+    heart.textContent = '💖';
+    document.body.appendChild(heart);
+
+    // Ocultar la pantalla de inicio
+    introScreen.classList.add('hidden');
+
+    // Lanzar confeti al explotar
+    setTimeout(() => launchConfetti(), 500);
+
+    // Limpiar el corazón después de la animación
+    setTimeout(() => heart.remove(), 1300);
+});
+
 // ===== SOPLAR LAS VELAS =====
 const cake = document.getElementById('cake');
 const blowBtn = document.getElementById('blowBtn');
@@ -68,7 +89,7 @@ cake.addEventListener('click', () => {
     setTimeout(() => cake.style.transform = 'scale(1)', 200);
 });
 
-// ===== ✨ NUEVO: Carta desplegable =====
+// ===== Carta desplegable =====
 const envelope = document.getElementById('envelope');
 const letter = document.getElementById('letter');
 
@@ -76,7 +97,7 @@ envelope.addEventListener('click', () => {
     letter.classList.toggle('open');
 });
 
-// ===== ✨ NUEVO: Globos =====
+// ===== Globos =====
 function launchBalloons() {
     const colors = ['#ff8fa3', '#ffc0cb', '#800020', '#fff', '#ff6a00'];
     for (let i = 0; i < 15; i++) {
@@ -97,7 +118,7 @@ function launchBalloons() {
 launchBalloons();
 setInterval(launchBalloons, 8000);
 
-// ===== ✨ NUEVO: Velas que se apagan con el micrófono =====
+// ===== Velas que se apagan con el micrófono =====
 let audioContext = null;
 
 async function startMicrophone() {
@@ -111,7 +132,6 @@ async function startMicrophone() {
 
         const dataArray = new Uint8Array(analyser.frequencyBinCount);
 
-        // Detectar soplido: pico de volumen
         function checkBlow() {
             analyser.getByteFrequencyData(dataArray);
             let sum = 0;
@@ -120,7 +140,6 @@ async function startMicrophone() {
             }
             const avg = sum / dataArray.length;
 
-            // Si sopla fuerte (volumen alto), apagar velas
             if (avg > 60 && !cake.classList.contains('out')) {
                 cake.classList.add('out');
                 blowBtn.style.display = 'none';
@@ -135,7 +154,6 @@ async function startMicrophone() {
 
         checkBlow();
     } catch (err) {
-        // Si no hay permiso de micrófono, el botón sigue funcionando normal
         console.log('Micrófono no disponible, usando botón');
     }
 }
