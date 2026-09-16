@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños, Mamá! 💖</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💖</text></svg>">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
 
+    <div class="confetti" id="confetti"></div>
+
+    <div class="container">
+        <h1 class="title">¡Feliz Cumpleaños, Mamá! 🎉</h1>
+        <p class="subtitle">Hoy celebras <strong>48 años</strong> de pura luz y amor 💕</p>
+
+        <!-- El pastel -->
+        <div class="cake" id="cake">
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+            <div class="candle candle-2">
+                <div class="flame"></div>
+            </div>
+            <div class="candle candle-3">
+                <div class="flame"></div>
+            </div>
+            <div class="cake-layer layer-1">
+                <span class="icing"></span>
+            </div>
+            <div class="cake-layer layer-2">
+                <span class="icing"></span>
+            </div>
+            <div class="cake-layer layer-3"></div>
+            <div class="plate"></div>
+        </div>
+
+        <!-- Botón mágico -->
+        <button class="btn" id="blowBtn">🎂 ¡Sopla las velas!</button>
+
+        <!-- Mensaje sorpresa -->
+        <div class="message hidden" id="message">
+            <p>✨ ¡Que todos tus deseos se cumplan! ✨</p>
+            <p>Te amo infinitamente, Mamá 💖</p>
+        </div>
+
+        <!-- Contador -->
+        <div class="counter">
+            <p>Has sido increíble por:</p>
+            <div class="numbers">
+                <span id="years">48</span>
+                <span>años</span>
+                <span id="months">0</span>
+                <span>meses</span>
+                <span id="days">0</span>
+                <span>días</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
