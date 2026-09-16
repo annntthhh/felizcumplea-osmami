@@ -302,6 +302,115 @@ body {
     animation: fall linear forwards;
 }
 
+/* ===== ✨ NUEVO: Carta desplegable ===== */
+.letter-section {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    min-height: 80px;
+    cursor: pointer;
+}
+
+.envelope-front {
+    background: linear-gradient(135deg, #800020, #a00028);
+    color: #fff;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(128,0,32,0.35);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s;
+}
+
+.envelope-front:hover {
+    transform: scale(1.03);
+}
+
+.envelope-heart {
+    font-size: 2.5rem;
+}
+
+.envelope-text {
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.letter {
+    display: none;
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px 20px;
+    margin-top: 15px;
+    box-shadow: 0 6px 20px rgba(128,0,32,0.2);
+    text-align: left;
+    animation: letterOpen 0.8s ease;
+    border: 2px solid #ffc0cb;
+}
+
+.letter.open {
+    display: block;
+}
+
+.letter-title {
+    font-size: 1.3rem;
+    color: #800020;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.letter-text {
+    font-size: 1rem;
+    color: #4a4a4a;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+/* ===== ✨ NUEVO: Globos ===== */
+.balloon {
+    position: fixed;
+    bottom: -120px;
+    width: 45px;
+    height: 55px;
+    border-radius: 50% 50% 50% 50% / 55% 55% 45% 45%;
+    z-index: 1;
+    opacity: 0.85;
+    animation: balloonFloat linear forwards;
+    pointer-events: none;
+}
+
+.balloon::before {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 8px solid inherit;
+}
+
+.balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1.5px;
+    height: 30px;
+    background: rgba(128,0,32,0.5);
+}
+
 /* ===== ANIMACIONES ===== */
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
@@ -344,9 +453,29 @@ body {
     }
 }
 
+@keyframes letterOpen {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes balloonFloat {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-50vh) translateX(20px) rotate(5deg);
+    }
+    100% {
+        transform: translateY(-115vh) translateX(-15px) rotate(-5deg);
+        opacity: 0;
+    }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 400px) {
     .title { font-size: 1.8rem; }
     .cake { transform: scale(0.9); }
     .numbers span { font-size: 1.1rem; }
+    .envelope { width: 260px; }
+    .letter { padding: 20px 15px; }
 }
