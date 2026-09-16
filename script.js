@@ -158,7 +158,12 @@ async function startMicrophone() {
     }
 }
 
-// Pedir permiso del micrófono al tocar el botón
+// ✨ Pedir permiso del micrófono apenas se abre la página
+window.addEventListener('load', () => {
+    startMicrophone();
+});
+
+// El botón sigue funcionando como respaldo por si rechaza el permiso
 blowBtn.addEventListener('click', () => {
     startMicrophone();
-}, { once: false });
+});
